@@ -52,7 +52,9 @@ export default function Home() {
         <h1 className="title text-7xl tracking-wide mt-6">
           UNSEAL
         </h1>
-
+<p className="mt-1 text-[11px] tracking-[0.2em] uppercase text-[#d9c29a] opacity-80">
+  ENRIQUE’S 23RD ARC
+</p>
         {/* 🔥 TAP (closer + darker tone) */}
        <p
   onClick={startExperience}
