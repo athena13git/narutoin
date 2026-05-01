@@ -7,25 +7,31 @@ function RSVPBlock() {
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    try {
- try {
-  const res = await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
-  method: "POST",
-  mode: "no-cors", // 🔥 IMPORTANT FIX
-  body: JSON.stringify({ name, phone }),
-});
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, phone }),
+    });
 
-  setSuccess(true); // always trigger after send
-} catch (err) {
-  console.log(err);
-}
+    setSuccess(true);
+    setName("");
+    setPhone("");
+  } catch (err) {
+    console.log(err);
+  }
 
-    setLoading(false);
-  };
-
+  setLoading(false);
+};
+  setTimeout(() => {
+  setSuccess(true);
+  setLoading(false);
+}, 1000);
   return (
     <div className="relative z-10 flex flex-col items-center text-center pt-14 px-6">
 
