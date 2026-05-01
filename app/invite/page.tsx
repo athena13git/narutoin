@@ -53,7 +53,7 @@ const handleSubmit = async (e: any) => {
         CONFIRM YOUR PRESENCE
       </p>
 
-      {success ? (
+     {success && !loading ? (
       <div className="flex flex-col items-center justify-center min-h-[300px] text-center animate-successPulse">
 
   <p
