@@ -6,12 +6,15 @@ function RSVPBlock() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = async (e: any) => {
+const handleSubmit = async (e: any) => {
   e.preventDefault();
+
+  if (!name || !phone) return;
+
   setLoading(true);
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,19 +22,19 @@ function RSVPBlock() {
       body: JSON.stringify({ name, phone }),
     });
 
-    setSuccess(true);
-    setName("");
-    setPhone("");
+    if (res.ok) {
+      setSuccess(true);
+      setName("");
+      setPhone("");
+    }
+
   } catch (err) {
     console.log(err);
   }
 
   setLoading(false);
 };
-  setTimeout(() => {
-  setSuccess(true);
-  setLoading(false);
-}, 1000);
+  
   return (
     <div className="relative z-10 flex flex-col items-center text-center pt-14 px-6">
 
