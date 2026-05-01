@@ -5,8 +5,9 @@ function RSVPBlock() {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+const [success, setSuccess] = useState(false);
 
-const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: any) => {
   e.preventDefault();
 
   if (!name || !phone) return;
@@ -53,7 +54,7 @@ const handleSubmit = async (e: any) => {
         CONFIRM YOUR PRESENCE
       </p>
 
-     {success && !loading ? (
+     {success ? (
       <div className="flex flex-col items-center justify-center min-h-[300px] text-center animate-successPulse">
 
   <p
