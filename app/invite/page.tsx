@@ -14,19 +14,18 @@ const handleSubmit = async (e: any) => {
   setLoading(true);
 
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+
+    await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, phone }),
+      body: formData,
     });
 
-    if (res.ok) {
-      setSuccess(true);
-      setName("");
-      setPhone("");
-    }
+    setSuccess(true);
+    setName("");
+    setPhone("");
 
   } catch (err) {
     console.log(err);
