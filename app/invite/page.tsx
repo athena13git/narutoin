@@ -243,7 +243,7 @@ return (
 <section className="min-h-screen relative overflow-hidden">
 
   <img
-    src="/BG3.png"
+    src="/bg3.png"
     className="absolute inset-0 w-full h-full object-cover"
     style={{ filter: "brightness(0.75)" }}
   />
@@ -336,7 +336,7 @@ SHILLONG BYPASS ROAD    </p>
 
   {/* BACKGROUND */}
   <img
-    src="/BG4.png"
+    src="/bg4.png"
     alt="background"
     className="absolute inset-0 w-full h-full object-cover"
     style={{ filter: "brightness(0.7)" }}
@@ -422,7 +422,7 @@ SHILLONG BYPASS ROAD    </p>
 
   {/* BACKGROUND */}
   <img
-    src="/BG4.png"
+    src="/bg5.png"
     alt="background"
     className="absolute inset-0 w-full h-full object-cover"
     style={{ filter: "brightness(0.7)" }}
