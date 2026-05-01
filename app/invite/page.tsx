@@ -23,15 +23,18 @@ const handleSubmit = async (e: any) => {
       body: formData,
     });
 
-    setSuccess(true);
-    setName("");
-    setPhone("");
+    // 🔥 Force UI transition smoothly
+    setTimeout(() => {
+      setSuccess(true);
+      setLoading(false);
+      setName("");
+      setPhone("");
+    }, 700);
 
   } catch (err) {
     console.log(err);
+    setLoading(false);
   }
-
-  setLoading(false);
 };
   
   return (
