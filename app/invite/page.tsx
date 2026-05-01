@@ -422,7 +422,7 @@ SHILLONG BYPASS ROAD    </p>
 
   {/* BACKGROUND */}
   <img
-    src="/bg5.png"
+    src="/bg5.PNG"
     alt="background"
     className="absolute inset-0 w-full h-full object-cover"
     style={{ filter: "brightness(0.7)" }}
