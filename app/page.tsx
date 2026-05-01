@@ -52,13 +52,18 @@ export default function Home() {
         <h1 className="title text-7xl tracking-wide mt-2">
           UNSEAL
         </h1>
-<p className="mt-1 text-[11px] tracking-[0.2em] uppercase text-[#d9c29a] opacity-80">
+<p
+  className="mt-2 text-[13px] tracking-[0.25em] uppercase text-[#d9c29a] opacity-90"
+  style={{
+    textShadow: "0 0 6px rgba(255,140,60,0.3)"
+  }}
+>
   ENRIQUE’S 23RD ARC
 </p>
         {/* 🔥 TAP (closer + darker tone) */}
        <p
   onClick={startExperience}
-  className="mt-1 text-[11px] tracking-[0.35em] uppercase cursor-pointer transition duration-300"
+  className="mt-4 text-[11px] tracking-[0.35em] uppercase cursor-pointer transition duration-300"
   style={{
     color: "rgba(214, 178, 110, 0.75)", // muted gold-amber
     textShadow: "0 0 4px rgba(255,140,60,0.25)"
