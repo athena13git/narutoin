@@ -1,0 +1,145 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'NinjaNaruto';
+  src: url('/fonts/ninja-naruto.ttf') format('truetype');
+}
+
+/* Root */
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Title */
+.title {
+  font-family: 'NinjaNaruto', sans-serif;
+  letter-spacing: 0.08em;
+  color: #E6D3A3; /* warm gold */
+
+  /* 🔥 BLACK OUTLINE EFFECT */
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.9),
+     1px -1px 0 rgba(0,0,0,0.9),
+    -1px  1px 0 rgba(0,0,0,0.9),
+     1px  1px 0 rgba(0,0,0,0.9),
+
+    /* subtle depth */
+    0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* 🔥 Seal Rotation */
+@keyframes rotateSeal {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-seal {
+  animation: rotateSeal 18s linear infinite;
+}
+
+/* 🔥 Pulse */
+@keyframes pulseSeal {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+.pulse {
+  animation: pulseSeal 2.5s ease-in-out infinite;
+}
+
+/* 🔥 Glow */
+@keyframes chakraGlow {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(255,140,0,0));
+  }
+  100% {
+    filter: drop-shadow(0 0 30px rgba(255,140,0,0.9));
+  }
+}
+
+.glow-active {
+  animation: chakraGlow 0.6s ease-out forwards;
+}
+
+/* 🔥 Background Fade (SOFT FIXED) */
+@keyframes chakraFade {
+  0% { opacity: 0; }
+  100% { opacity: 0.5; }
+}
+
+.animate-chakraFade {
+  animation: chakraFade 2s ease-out forwards;
+}
+
+/* 🔥 Fade Up (ONLY ONCE — FIXED) */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* 🔥 Cursor */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cursor::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+.title {
+  font-family: 'NinjaNaruto', sans-serif;
+  letter-spacing: 0.08em;
+  color: #d9c29a; /* slightly deeper, less chalky */
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.9),     /* sharp base */
+    0 3px 6px rgba(0,0,0,0.6),   /* depth */
+    0 0 4px rgba(255,140,60,0.15); /* VERY subtle warmth */
+}
+/* 🔥 SUCCESS GLOW PULSE */
+@keyframes successPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    text-shadow: 0 0 0 rgba(255,140,0,0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+    text-shadow: 0 0 18px rgba(255,140,0,0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(255,140,0,0.5);
+  }
+}
+
+.animate-successPulse {
+  animation: successPulse 1.2s ease-out forwards;
+}
