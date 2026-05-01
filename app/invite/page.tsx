@@ -171,11 +171,11 @@ return (
       <section className="min-h-screen relative overflow-hidden">
 
         <img
-          src="/bg2.png"
-          alt="background"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.75)" }}
-        />
+  src="/bg2.png"
+  loading="lazy"
+  className="absolute inset-0 w-full h-full object-cover"
+  style={{ filter: "brightness(0.75)" }}
+/>
 
         <div className="absolute inset-0 bg-black/50" />
 
