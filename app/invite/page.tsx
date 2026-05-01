@@ -5,7 +5,6 @@ function RSVPBlock() {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: any) => {
   e.preventDefault();
