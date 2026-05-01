@@ -15,22 +15,16 @@ const [success, setSuccess] = useState(false);
   setLoading(true);
 
   try {
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
+    const url = `https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec?name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
 
-    await fetch("https://script.google.com/macros/s/AKfycbzLNaVHvETbQ0yIJ-59Wg0dCFnq14ciNDXL2AWXPwtfu6P3djnd66mVDaSH3d4Ikfq1bg/exec", {
-      method: "POST",
-      body: formData,
-    });
+    await fetch(url); // 🔥 GET request instead of POST
 
-    // 🔥 Force UI transition smoothly
     setTimeout(() => {
       setSuccess(true);
       setLoading(false);
       setName("");
       setPhone("");
-    }, 700);
+    }, 500);
 
   } catch (err) {
     console.log(err);
