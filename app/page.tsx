@@ -34,10 +34,10 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full">
 
         {/* 🔥 SEAL (bigger + lower) */}
-        <div onClick={startExperience} className="cursor-pointer mb-4 -mt-4">
+        <div onClick={startExperience} className="cursor-pointer mb-4 -mt-2">
           <div className="pulse">
             <img
               src="/seal.png"
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
 
         {/* 🔥 TITLE (moved down slightly) */}
-        <h1 className="title text-7xl tracking-wide mt-6">
+        <h1 className="title text-7xl tracking-wide mt-2">
           UNSEAL
         </h1>
 <p className="mt-1 text-[11px] tracking-[0.2em] uppercase text-[#d9c29a] opacity-80">
